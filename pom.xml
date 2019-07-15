@@ -8,11 +8,6 @@
     <artifactId>my-fantastic-project</artifactId>
     <name>My Fantastic Project (tm)</name>
     <version>1.0.0-SNAPSHOT</version>
-    <modules>
-        <module>util</module>
-        <module>business-app</module>
-        <module>legacy</module>
-    </modules>
     <packaging>pom</packaging>
 
     <description>A sample Maven multi-module project</description>
@@ -42,6 +37,17 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>multi-module</id>
+            <modules>
+                <module>util</module>
+                <module>business-app</module>
+                <module>legacy</module>
+            </modules>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
